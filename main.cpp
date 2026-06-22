@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     double cash = 10000;
     int choice = 0;
-
+    unordered_map<string, int> portfolio;
     unordered_map<string, double> stockPrices;
     stockPrices["AAPL"] = 180;
     stockPrices["TSLA"] = 250;
@@ -29,6 +29,19 @@ int main(){
 
         if(choice == 1){
             cout << "cuurrent cash balance : £" << cash << endl;
+        }
+        else if(choice == 5){
+            cout << "\nCurrent Portfolio: \n";
+            bool hasHoldings = false;
+            for(const auto& holding : portfolio){
+                if(holding.second > 0){
+                    cout << holding.first << ": " << holding.second << " shares\n";
+                    hasHoldings = true;
+                }
+            }
+            if(!hasHoldings){
+                cout << "You dont have any stocks in your portfolio.\n";
+            }
         }
         else if (choice == 6) {
             cout << "Exiting simulator..." << endl;
