@@ -76,18 +76,47 @@ int main(){
                 cout << "New cash amount: £" << cash << endl;
             }
         }
-        else if(choice == 5){
-            cout << "\nCurrent Portfolio: \n";
+        else if (choice == 5) {
+            cout << "\nCurrent Portfolio\n";
+
             bool hasHoldings = false;
-            for(const auto& holding : portfolio){
-                if(holding.second > 0){
-                    cout << holding.first << ": " << holding.second << " shares\n";
+            double portfolioValue = 0;
+
+            for (const auto& holding : portfolio) {
+
+                if (holding.second > 0) {
+
+                    double value =
+                        stockPrices[holding.first] * holding.second;
+
+                    portfolioValue += value;
+
+                    cout << holding.first
+                        << ": "
+                        << holding.second
+                        << " shares | Value: £"
+                        << value
+                        << endl;
+
                     hasHoldings = true;
                 }
             }
-            if(!hasHoldings){
-                cout << "You dont have any stocks in your portfolio.\n";
+
+            if (!hasHoldings) {
+                cout << "You do not own any stocks yet.\n";
             }
+
+            cout << "\nPortfolio Value: £"
+                << portfolioValue
+                << endl;
+
+            cout << "Cash Balance: £"
+                << cash
+                << endl;
+
+            cout << "Total Net Worth: £"
+                << cash + portfolioValue
+                << endl;
         }
         else if (choice == 6) {
             cout << "Exiting simulator..." << endl;
