@@ -30,6 +30,30 @@ int main(){
         if(choice == 1){
             cout << "cuurrent cash balance : £" << cash << endl;
         }
+        else if(choice == 3){
+            string symbol;
+            int quantity;
+            cout << "Enter stock symbol: ";
+            cin >> symbol;
+            cout << "Enter quantity: ";
+            cin >> quantity;
+            if(!stockPrices.count(symbol)){
+                cout << "Stock not found\n";
+            }
+            else{
+                double cost = stockPrices[symbol] * quantity;
+                if(cost > cash){
+                    cout << "Not enough cash. \n";
+                }
+                else{
+                    cash -= cost;
+                    portfolio[symbol] += quantity;
+
+                    cout << "Bought " << quantity << "shares of " << symbol << endl;
+                    cout << "Remaining cash: £" << cash << endl;
+                }
+            }
+        }
         else if(choice == 5){
             cout << "\nCurrent Portfolio: \n";
             bool hasHoldings = false;
