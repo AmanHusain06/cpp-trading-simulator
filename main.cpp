@@ -49,9 +49,31 @@ int main(){
                     cash -= cost;
                     portfolio[symbol] += quantity;
 
-                    cout << "Bought " << quantity << "shares of " << symbol << endl;
+                    cout << "Bought " << quantity << " shares of " << symbol << endl;
                     cout << "Remaining cash: £" << cash << endl;
                 }
+            }
+        }
+        else if(choice == 4){
+            string symbol;
+            int quantity;
+            cout << "Enter stock symbol: ";
+            cin >> symbol;
+            cout << "Enter quantity: ";
+            cin >> quantity;
+            if(!stockPrices.count(symbol)){
+                cout << "Stock not found\n";
+            }
+            else if(!portfolio.count(symbol) || portfolio[symbol] < quantity){
+                cout << "you dont have enough shares to sell.\n";
+            }
+            else{
+                double saleValue = stockPrices[symbol] * quantity;
+                portfolio[symbol] -= quantity;
+                cash += saleValue;
+
+                cout << "Sold " << quantity << " shares of " << symbol << endl;
+                cout << "New cash amount: £" << cash << endl;
             }
         }
         else if(choice == 5){
