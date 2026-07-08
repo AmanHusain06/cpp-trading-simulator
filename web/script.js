@@ -1,6 +1,6 @@
-// ===========================
+// =========================
 // Trading Simulator Data
-// ===========================
+// =========================
 
 let cash = 10000;
 
@@ -35,4 +35,29 @@ let stocks = [
     }
 ];
 
-console.log(stocks);
+// =========================
+// Render Market Table
+// =========================
+
+function renderMarket() {
+
+    const marketTable = document.getElementById("market-table");
+
+    marketTable.innerHTML = "";
+
+    for (const stock of stocks) {
+
+        marketTable.innerHTML += `
+            <tr>
+                <td>${stock.symbol}</td>
+                <td>${stock.company}</td>
+                <td>£${stock.price}</td>
+                <td>${stock.change.toFixed(2)}%</td>
+            </tr>
+        `;
+
+    }
+
+}
+
+renderMarket();
