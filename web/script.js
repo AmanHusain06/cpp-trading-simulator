@@ -52,7 +52,9 @@ function renderMarket() {
                 <td>${stock.symbol}</td>
                 <td>${stock.company}</td>
                 <td>£${stock.price}</td>
-                <td>${stock.change.toFixed(2)}%</td>
+                <td style="color:${stock.change >= 0 ? '#22c55e' : '#ef4444'}">
+                    ${stock.change >= 0 ? '+' : ''}${stock.change.toFixed(2)}%
+                </td>
             </tr>
         `;
 
@@ -128,7 +130,12 @@ function updateDashboard() {
     document.getElementById("cash").textContent = `£${cash.toFixed(2)}`;
     document.getElementById("portfolio-value").textContent = `£${portfolioValue.toFixed(2)}`;
     document.getElementById("net-worth").textContent = `£${netWorth.toFixed(2)}`;
-    document.getElementById("profit-loss").textContent = `£${profitLoss.toFixed(2)}`;
+    const profitElement = document.getElementById("profit-loss");
+    profitElement.textContent = `£${profitLoss.toFixed(2)}`;
+    profitElement.style.color =
+        profitLoss >= 0
+            ? "#22c55e"
+            : "#ef4444";
 }
 
 // =========================
@@ -199,8 +206,32 @@ function renderTransactions() {
     }
 }
 
+// =========================
+// Simulate Market Prices
+// =========================
+
+function updateMarket() {
+
+    for (const stock of stocks) {
+
+        // Random percentage between -3% and +3%
+        const percentageChange = (Math.random() * 6 - 3);
+
+        stock.change = percentageChange;
+
+        stock.price = stock.price * (1 + percentageChange / 100);
+
+        // Keep 2 decimal places
+        stock.price = Number(stock.price.toFixed(2));
+    }
+
+    renderMarket();
+    updateDashboard();
+    renderPortfolio();
+}
 
 renderMarket();
 updateDashboard();
 renderPortfolio();
 renderTransactions();
+setInterval(updateMarket, 3000);
