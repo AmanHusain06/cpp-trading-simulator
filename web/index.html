@@ -79,15 +79,17 @@
             <h2>Trade</h2>
 
             <input
+                id="symbol-input"
                 type="text"
                 placeholder="Stock Symbol">
 
             <input
+                id="quantity-input"
                 type="number"
                 placeholder="Quantity">
 
-            <button>Buy</button>
-            <button>Sell</button>
+            <button onclick="buyStock()">Buy</button>
+            <button onclick="sellStock()">Sell</button>
 
         </section>
 
@@ -110,16 +112,10 @@
 
                 </thead>
 
-                <tbody>
-
+                <tbody id="portfolio-table">
                     <tr>
-
-                        <td colspan="4">
-                            You do not own any stocks yet.
-                        </td>
-
+                        <td colspan="4">You do not own any stocks yet.</td>
                     </tr>
-
                 </tbody>
 
             </table>
@@ -132,11 +128,9 @@
 
             <h2>Transaction History</h2>
 
-            <ul>
-
+           <ul id="transaction-list">
                 <li>No transactions yet.</li>
-
-            </ul>
+           </ul>
 
         </section>
 
