@@ -82,12 +82,6 @@ This project strengthened my understanding of:
 
 ---
 
-## Live Demo
-
-(Add GitHub Pages link here)
-
----
-
 ## Author
 
 **Aman Husain**
