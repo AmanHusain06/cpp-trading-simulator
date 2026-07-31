@@ -32,15 +32,18 @@ A browser-based trading simulator built with HTML, CSS and JavaScript that allow
 
 ### Dashboard
 
-(Add screenshot here)
+<img width="1312" height="783" alt="Screenshot 2026-07-31 at 16 20 11" src="https://github.com/user-attachments/assets/f2425321-97f5-4a6e-a179-c9c1828d2cae" />
+
 
 ### Portfolio
 
-(Add screenshot here)
+<img width="1298" height="217" alt="Screenshot 2026-07-31 at 16 20 26" src="https://github.com/user-attachments/assets/ef1e693b-7b26-4a0f-a1d7-c0ee9608ce5c" />
+
 
 ### Live Market
 
-(Add screenshot here)
+<img width="1280" height="473" alt="Screenshot 2026-07-31 at 16 20 37" src="https://github.com/user-attachments/assets/637afad1-db9e-479f-9bf6-d32ac776a5c7" />
+
 
 ---
 
