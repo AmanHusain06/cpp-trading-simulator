@@ -44,6 +44,10 @@
                 <p id="profit-loss">£0</p>
             </div>
 
+            <button class="reset-btn" onclick="resetSimulator()">
+                Reset Simulator
+            </button>
+
         </section>
 
         <!-- Stock Market -->
@@ -53,16 +57,15 @@
             <h2>Market</h2>
 
             <table>
-
                 <thead>
-
-                    <tr>
-                        <th>Symbol</th>
-                        <th>Company</th>
-                        <th>Price</th>
-                        <th>Change</th>
-                    </tr>
-
+                <tr>
+                    <th>Symbol</th>
+                    <th>Shares</th>
+                    <th>Avg Cost</th>
+                    <th>Current Price</th>
+                    <th>Value</th>
+                    <th>P/L</th>
+                </tr>
                 </thead>
 
                 <tbody id="market-table">
@@ -100,24 +103,22 @@
             <h2>Portfolio</h2>
 
             <table>
-
                 <thead>
-
                     <tr>
                         <th>Symbol</th>
                         <th>Shares</th>
+                        <th>Avg Cost</th>
                         <th>Current Price</th>
                         <th>Value</th>
+                        <th>P/L</th>
                     </tr>
-
                 </thead>
 
                 <tbody id="portfolio-table">
                     <tr>
-                        <td colspan="4">You do not own any stocks yet.</td>
+                        <td colspan="6">You do not own any stocks yet.</td>
                     </tr>
                 </tbody>
-
             </table>
 
         </section>

@@ -128,16 +128,6 @@ button {
     transition: 0.2s ease;
 }
 
-button:first-of-type {
-    background: #22c55e;
-    color: #052e16;
-}
-
-button:last-of-type {
-    background: #ef4444;
-    color: #450a0a;
-}
-
 button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
@@ -183,4 +173,42 @@ li {
     header h1 {
         font-size: 32px;
     }
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buy-btn {
+    background-color: #22c55e;
+}
+
+.buy-btn:hover {
+    background-color: #16a34a;
+}
+
+.sell-btn {
+    background-color: #ef4444;
+}
+
+.sell-btn:hover {
+    background-color: #dc2626;
+}
+
+.reset-btn {
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #475569;
 }
